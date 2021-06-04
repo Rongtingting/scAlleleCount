@@ -125,7 +125,7 @@ for pileupcolumn in samfile.pileup(max_depth=args.maxdepth):
         for pileupread in pileupcolumn.pileups:
             if not pileupread.is_del and not pileupread.is_refskip:
                 try:
-                    cbtagvalue  = pileupread.alignment.get_tag('CB')
+                    cbtagvalue  = pileupread.alignment.get_tag('RG')
                     if cbtagvalue in barcode_index:
                         barcodei = barcode_index[cbtagvalue];
                         readbase = pileupread.alignment.query_sequence[pileupread.query_position];
